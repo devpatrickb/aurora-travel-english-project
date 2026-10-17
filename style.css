@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anta", sans-serif;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8f8f8;
+  color: #101010;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.16);
+  z-index: 10000;
+}
+
+nav .left img {
+  width: 72px;
+  height: 72px;
+}
+
+nav .links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav .links a {
+  color: #101010;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+}
+
+nav .links a::after {
+  content: "";
+  position: absolute;
+  top: 104%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #101010;
+  transition: 0.2s ease-in-out;
+}
+
+nav .links a:hover::after {
+  width: 100%;
+}
+
+nav .links a:active::after {
+  width: 75%;
+  transform: translateX(15%);
+}
+
+nav .right #cta {
+  padding: 12px 16px;
+  background: #3b56db;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+nav .right #cta:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+nav .right #cta:active {
+  transform: scale(0.97);
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.slideshow-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.slide a {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 100;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.slide-btns {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  pointer-events: none;
+}
+
+.slide-btns button {
+  pointer-events: auto;
+}
+
+.slide-btns button {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  color: white;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+.headlines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(223, 223, 223);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 24px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headlines h1 {
+  font-size: 52px;
+}
+
+.headlines h2 {
+  font-size: 36px;
+}
+
+.headlines .cta {
+  padding: 12px 16px;
+  font-size: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgb(223, 223, 223);
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    color: black;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: calc(100% + 2px);
+    background: white;
+    border-radius: 16px;
+    transition: width 0.2s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+  &:hover::after {
+    width: calc(100% + 2px);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+#offers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#offers .content {
+  max-width: 1180px;
+  width: 100%;
+  padding: 24px 12px 24px 12px;
+}
+
+#offers .content h2 {
+  font-size: 36px;
+  color: #1d1d1d;
+}
+
+#offers .content .horizontal-divider {
+  width: 100%;
+  height: 2px;
+  background: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+#offers .offers {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 20px;
+}
+
+#offers .offers .card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 24px;
+  width: 100%;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-in-out;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+#offers .offers .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+}
+
+#offers .offers .card .offer-info {
+  padding: 12px;
+  font-size: 20px;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#offers .offers .card .offer-info .cta {
+  padding: 12px 16px;
+  font-size: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: black;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    color: white;
+  }
+  &::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: 150px;
+    transform: translateY(-50%);
+    transition: left 0.2s ease-in-out;
+  }
+
+  &:hover::before {
+    left: calc(100% - 48px);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: calc(100% + 2px);
+    background: black;
+    border-radius: 16px;
+    transition: width 0.2s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+  &:hover::after {
+    width: calc(100% + 2px);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}
