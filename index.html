@@ -14,15 +14,15 @@
       </div>
       <div class="right">
         <a
-          href=""
+          href="#"
           id="cta"
           onclick="
-            alert(
-              'This is only a school project. We don`t have real contact details.',
-            )
+            openContact();
+            return false;
           "
-          >Contact</a
         >
+          Contact
+        </a>
       </div>
     </nav>
 
@@ -133,6 +133,182 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <a href="#" onclick="openImprint()">Imprint</a>
+      <a href="#" onclick="openPrivacy()">Privacy policy</a>
+    </footer>
+
+    <div class="contact-container">
+      <div class="contact">
+        <button id="closeContact" aria-label="Close">&times;</button>
+
+        <h2>CONTACT US</h2>
+
+        <div class="legal-content">
+          <p><strong>AURORA Travel</strong></p>
+          <p>School Project – Fictional Company</p>
+
+          <h3>Address</h3>
+          <p>
+            Sonnenallee 24<br />
+            1010 Vienna, Austria
+          </p>
+
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:hello@aurora-travel.example">
+              hello@aurora-travel.example
+            </a>
+          </p>
+
+          <h3>Phone</h3>
+          <p>+43 1 555 0101</p>
+
+          <p>
+            <em>
+              This is a fictional travel agency created for a school project. No
+              real contact or booking service is available.
+            </em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="imprint-container">
+      <div class="imprint">
+        <button id="closeImprint">&times;</button>
+        <h2>IMPRINT</h2>
+        <div class="legal-content">
+          <p><strong>AURORA Travel</strong></p>
+          <p>School Project – Fictional Company</p>
+
+          <h3>Company Information</h3>
+          <p>
+            AURORA Travel<br />
+            Sonnenallee 24<br />
+            1010 Vienna, Austria
+          </p>
+
+          <h3>Contact</h3>
+          <p>
+            Email: hello@aurora-travel.example<br />
+            Phone: +43 1 555 0101
+          </p>
+
+          <h3>Responsible for Content</h3>
+          <p>
+            AURORA Travel – School Project<br />
+            Fictional address and contact details
+          </p>
+
+          <h3>Disclaimer</h3>
+          <p>
+            This website was created for educational purposes only. AURORA
+            Travel is a fictional travel agency. No real travel offers, bookings
+            or customer services are provided.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="privacy-container">
+      <div class="privacy">
+        <button id="closePrivacy">&times;</button>
+
+        <h2>PRIVACY POLICY</h2>
+
+        <div class="legal-content">
+          <p><strong>Last updated: October 18, 2026</strong></p>
+
+          <h3>1. About This Website</h3>
+          <p>
+            AURORA Travel is a fictional travel agency website created
+            exclusively for a school project. No real travel services, bookings
+            or customer accounts are offered through this website.
+          </p>
+
+          <h3>2. Data Controller</h3>
+          <p>
+            This website is an educational demonstration project. The contact
+            information shown in the imprint is fictional and must not be used
+            to contact a real company.
+          </p>
+
+          <h3>3. Hosting by Vercel</h3>
+          <p>
+            This website is hosted by Vercel Inc. When you access the website,
+            technical information may be processed to deliver the website,
+            maintain security and ensure reliable operation. Depending on the
+            hosting configuration, this may include IP addresses, request
+            information, timestamps, browser information and server logs.
+          </p>
+          <p>
+            Vercel's processing of personal data is described in its own privacy
+            notice:
+            <a
+              href="https://vercel.com/legal/privacy-notice"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vercel Privacy Notice </a
+            >.
+          </p>
+
+          <h3>4. Cookies and Analytics</h3>
+          <p>
+            The website's own HTML, CSS and JavaScript code does not
+            intentionally set cookies or use browser storage for tracking
+            purposes.
+          </p>
+          <p>
+            No analytics service is intentionally integrated in the source code
+            shown for this project. Hosting-related technical processing may
+            still take place. If additional analytics, cookies or third-party
+            services are added, this privacy policy must be updated accordingly.
+          </p>
+
+          <h3>5. Contact and Bookings</h3>
+          <p>
+            This website does not provide a working contact form, booking system
+            or customer account system. The Contact link only displays a notice
+            explaining that this is a school project.
+          </p>
+
+          <h3>6. External Links</h3>
+          <p>
+            This website contains links to external websites and image sources.
+            When you follow an external link, the destination website's own
+            privacy policy applies. The external provider may process technical
+            data when you visit its website.
+          </p>
+
+          <h3>7. Your Rights</h3>
+          <p>
+            Where applicable under data protection law, you may have rights to
+            access, correct, erase or restrict the processing of your personal
+            data, as well as other rights provided by applicable law.
+          </p>
+          <p>
+            For information about data processed by Vercel, please consult
+            Vercel's privacy notice and contact information.
+          </p>
+
+          <h3>8. Changes to This Policy</h3>
+          <p>
+            This policy may be updated if the website's features, hosting
+            configuration or data processing practices change.
+          </p>
+
+          <p>
+            <em>
+              This privacy policy is a school-project example and is not legal
+              advice.
+            </em>
+          </p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

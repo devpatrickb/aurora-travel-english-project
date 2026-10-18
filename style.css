@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Anta";
+  src: url("Anta-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -54,26 +62,23 @@ nav .links a {
   text-decoration: none;
   font-size: 22px;
   position: relative;
-}
-
-nav .links a::after {
-  content: "";
-  position: absolute;
-  top: 104%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #101010;
-  transition: 0.2s ease-in-out;
-}
-
-nav .links a:hover::after {
-  width: 100%;
-}
-
-nav .links a:active::after {
-  width: 75%;
-  transform: translateX(15%);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 104%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #101010;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  &:active::after {
+    width: 75%;
+    transform: translateX(15%);
+  }
 }
 
 nav .right #cta {
@@ -336,5 +341,307 @@ nav .right #cta:active {
   }
   &:active {
     transform: scale(0.97);
+  }
+}
+
+footer {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+footer a {
+  color: #101010;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 104%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #101010;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  &:active::after {
+    width: 75%;
+    transform: translateX(15%);
+  }
+}
+
+.imprint-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+}
+
+.imprint-container.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.imprint-container .imprint {
+  min-width: 500px;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 12px;
+  position: relative;
+}
+
+.imprint #closeImprint {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(189, 42, 42, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background: rgb(189, 42, 42);
+  }
+}
+
+.imprint h2 {
+  font-size: 32px;
+}
+
+.privacy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+}
+
+.privacy-container.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.privacy-container .privacy {
+  min-width: 500px;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 12px;
+  position: relative;
+}
+
+.privacy #closePrivacy {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(189, 42, 42, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background: rgb(189, 42, 42);
+  }
+}
+
+.privacy h2 {
+  font-size: 32px;
+}
+
+/* Legal content: imprint and privacy policy */
+
+.imprint-container .imprint,
+.privacy-container .privacy {
+  width: min(760px, calc(100vw - 32px));
+  min-width: 0;
+  max-height: 85vh;
+  overflow: hidden;
+  align-items: stretch;
+  background: rgba(20, 24, 38, 0.94);
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.imprint-container .imprint h2,
+.privacy-container .privacy h2 {
+  text-align: center;
+  padding: 12px 48px;
+  letter-spacing: 2px;
+}
+
+.legal-content {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: calc(85vh - 100px);
+  padding: 12px 20px 24px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.legal-content h3 {
+  font-size: 20px;
+  margin: 24px 0 8px;
+  color: #a5b4fc;
+}
+
+.legal-content p {
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.legal-content a {
+  color: #a5b4fc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover {
+  color: #c7d2fe;
+}
+
+.legal-content strong {
+  color: #ffffff;
+}
+
+.contact-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.contact-container.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-container .contact {
+  position: relative;
+  width: min(600px, 100%);
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  background: rgba(20, 24, 38, 0.96);
+  color: white;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+.contact h2 {
+  text-align: center;
+  padding: 12px 48px;
+}
+
+.contact #closeContact {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(189, 42, 42, 0.8);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact #closeContact:hover {
+  background: rgb(189, 42, 42);
+}
+
+@media (max-width: 600px) {
+  .imprint-container .imprint,
+  .privacy-container .privacy {
+    width: calc(100vw - 24px);
+    max-height: 90vh;
+  }
+
+  .legal-content {
+    max-height: calc(90vh - 100px);
+    padding: 8px 12px 20px;
+  }
+
+  .legal-content h3 {
+    font-size: 18px;
+  }
+
+  .legal-content p {
+    font-size: 15px;
   }
 }
